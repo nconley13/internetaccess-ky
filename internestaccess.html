@@ -2,199 +2,232 @@
 <html>
 
 <head>
-	<meta charset=utf-8 />
-	<title>KY Internet Access</title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-	<link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+    <meta charset=utf-8 />
+    <title>KY Internet Access</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins:300" rel="stylesheet" />
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 
-	<link href="#" rel="stylesheet" />
+    <link href="#" rel="stylesheet" />
 
-	<style>
+    <style>
+        body {
+            margin: 10;
+            padding: 0;
+            background: #11283a;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+            font-weight: 300;
+            color: #0e0c09;
+            font-size: 100%;
+        }
 
-body {
-    margin: 10;
-    padding: 0;
-    background: #40494b;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
-    font-weight: 300; 
-    color: #0e0c09;
-    font-size: 100%;
-}
-header, section, footer {
-  width: 80%;
-  margin: 10px auto;
-}
+        header,
+        section,
+        footer {
+            width: 80%;
+            margin: 10px auto;
+        }
 
- header {
-    font-size: 1.5em;
-    font-family: abril fatface;
-    font-weight: bold; 
-    letter-spacing: 0.1em;
-}
+        header {
+            Font-Family: 'Libre Baskerville', Serif;
+            Font-Size: 34px;
+            /* font-weight: ; */
+            color: #d3d3d3;
+            letter-spacing: 0.1em;
+        }
 
-h2 {  
-    font-size: 2em;
-    font-family: abril fatface; 
-    font-weight: 300; 
-    letter-spacing: .04em;
-}
-h3 {  
-    font-size: 2em;
-    font-family: abril fatface; 
-    font-weight: 300; 
-    letter-spacing: .04em;
-}
-  p {
-  font-size: 1.5em;
-  font-family: poppins light;
-  line-height: 1.5em;
-}
+        h2 {
+            Font-Family: 'Nunito', Sans-Serif;
+            Font-Size: 16px;
+            font-weight: 300;
+            color: #d3d3d3;
+            letter-spacing: .04em;
+        }
 
-a {
-  color: #25af53;
-  font-weight: bold;
-  text-decoration: none;
-}
+        h3 {
+            Font-Family: 'Nunito', Sans-Serif;
+            Font-Size: 16px;
+            font-weight: 300;
+            letter-spacing: .04em;
+        }
 
-a:hover {
-  text-decoration: underline;
-}
+        p {
+            Font-Family: 'Nunito', Sans-Serif;
+            Font-Size: 16px;
+            color: #d3d3d3;
+            line-height: 1.5em;
+        }
 
-ul {
-  padding-left: 20px;
-}
+        a {
+            color: #25af53;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-li {
-  margin: 10px 0;
-}
-hr {
-  margin: 20px 0;
-  border: 0;
-  height: 1px;
-  background: #d3d3d3;
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
-.caption {
-  margin: 0 0 20px 0;
-  display: block;
-}
-#map {
-  width: 100%;
-  height: 540px;
-  margin: 10px auto;
-  border: 2px solid #d3d3d3;
-}
-.highlight {
-  color: #f05716; 
-  font-weight: bold;
-}
-.img-fill {
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
-}
-.first-column {
-  float: left;
-  width: 49%;
-  padding-right: 2%;  
-  }
+        ul {
+            padding-left: 20px;
+        }
 
-.second-column {
-  float: left;
-  width: 49%;
-  }
+        li {
+            margin: 10px 0;
+        }
 
-/* Clear floats after columns */
-.row::after {
-  content: "";
-  display: block;
-  clear: both;
-  }
-  @media screen and (max-width: 900px) {
-  .first-column,
-  .second-column {
-    width: 100%;
-    }
-  }
-	</style>
+        hr {
+            margin: 20px 0;
+            border: 0;
+            height: 1px;
+            background: #d3d3d3;
+        }
+
+        .caption {
+            margin: 0 0 20px 0;
+            display: block;
+        }
+
+        #map {
+            width: 100%;
+            height: 450px;
+            margin: 20px auto;
+            border: 2px solid #d3d3d3;
+        }
+
+        .highlight {
+            color: #f05716;
+            font-weight: bold;
+        }
+
+        .img-fill {
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .first-column {
+            float: left;
+            width: 49%;
+            padding-right: 2%;
+        }
+
+        .second-column {
+            float: left;
+            width: 49%;
+        }
+
+        /* Clear floats after columns */
+        .row::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        @media screen and (max-width: 900px) {
+
+            .first-column,
+            .second-column {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-	<header>
-		<h1>Mapping Internet Access in the Time of COVID</h1>
-	</header>
+    <header>
+        <h1>Internet and Computer Access by School District</h1>
+    </header>
 
-	<section>
-		<div id='map'></div>
-	</section>
+    <section>
+        <div id='map'></div>
+    </section>
 
 
-	<section>
+    <section>
 
-		<h2></h2>
+        <h2>Map Information</h2>
 
-		
-	</section>
 
-	<footer>
-		<p>Map authored by Nick Conley</p>
-		
+    </section>
 
-		<a href="https://newmapsplus.github.io">
-			<img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
-				alt="University of Kentucky Geography">
-		</a>
+    <footer>
+        <p>Map authored by Nick Conley</p>
 
-		<a href="https://uky-gis.github.io">
-			<img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png"
-				alt="University of Kentucky Geography">
-		</a>
-	</footer>
+
+        <a href="https://newmapsplus.github.io">
+            <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
+                alt="University of Kentucky Geography">
+        </a>
+
+        <a href="https://uky-gis.github.io">
+            <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png"
+                alt="University of Kentucky Geography">
+        </a>
+    </footer>
 
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="internest_access_ky_school_disctrics.geojson"></script>
 
-	<script>
-		var options = {
-			center: [38.0865, -83.1263],
-			zoom: 6.5
-		}
+    <script>
+        var options = {
+            center: [37.8393, -85.5037],
+            zoom: 7.48
+        }
 
-		var map = L.map('map', options);
+        var map = L.map('map', options);
 
-		var basemap_url = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+        var basemap_url = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
 
-		var basemap_attributes = {
-			attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-		}
-		var tiles = L.tileLayer(basemap_url, basemap_attributes);
+        var basemap_attributes = {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        }
+        var tiles = L.tileLayer(basemap_url, basemap_attributes);
 
-		map.addLayer(tiles);
+        map.addLayer(tiles);
 
-		var access = L.geoJson(internet,{
-			pointToLayer: function (feature, latlng) {
-				return L.circleMarker(latlng, {
-					color: 'orange',
-					weight: 1,
-					fillColor: 'yellow',
-					fillOpacity: .8,
-					radius: 2
-				});
-			},
+        var access = L.geoJson(internet, {
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    color: 'black',
+                    weight: 1,
+                    fillColor: '#15397f',
+                    fillOpacity: .6,
+                    radius: 6
+                });
+            },
+            onEachFeature: function (feature, layer) {
+                var props = feature.properties
+                console.log(props);
+                var popup = `<h4><b>${props["Geographic School District"]}</h4></b>
+							<b>% No Internet or Computer Access:</b> ${props["% No Computer or Internet Estimate"]}`
+                layer.bindPopup(popup)
 
-        
+
+            }
+
         }).addTo(map);
-			
-			
-		
 
-	</script>
+        access.eachLayer(function (layer) {
+            layer.on('mouseover', function (e) {
+                e.target.setStyle({
+                    fillColor: "blue"
+                })
+                this.openPopup()
+            })
+            layer.on('mouseout', function (e) {
+                access.resetStyle(layer)
+                this.closePopup()
+            })
+        })
+
+
+
+    </script>
 
 </body>
 
 </html>
-
