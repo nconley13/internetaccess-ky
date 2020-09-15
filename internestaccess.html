@@ -51,6 +51,7 @@
             Font-Family: 'Nunito', Sans-Serif;
             Font-Size: 16px;
             font-weight: 300;
+            color: #d3d3d3;
             letter-spacing: .04em;
         }
 
@@ -104,7 +105,7 @@
         }
 
         .img-fill {
-            width: 100%;
+            width: 40%;
             height: auto;
             margin: 10px 0;
         }
@@ -144,20 +145,33 @@
 
     <section>
         <div id='map'></div>
+
+        <div class="first-column">
+           <b><h2>Map Information</h2></b> 
+            <p> This map shows the percent of households without internet or computer access for each school district in Kentucky. 
+                original data source is The National Historical Geographic Information System (NHGIS) and for this project the data 
+            were downloaded from the Urban Institute. </p>
+           <h3>Map Resources</h3>
+           <li><a href=https://datacatalog.urban.org/dataset/household-conditions-geographic-school-district>Urban Institute: Household Conditions by Geographic School District</a></li>
+                <li><a href=https://ipums.org/projects/ipums-nhgis/d050.v14.0>The National Historical Geographic Information System (NHGIS)</a></li>
+                <li><a href=https://leaflet-extras.github.io/leaflet-providers/preview> Leaflet Basemap</li>
+
+
+
+
+
+        </div>
+        <div class="second-column">
+            <img class="max-image-width" src="images/united_states_digital_divide.png"
+            title="The Digital Divide">
+            <div class=linkbox>
+                <a href=https://www.freepress.net/our-response/expert-analysis/insights-opinions/how-report-digital-divide-covid-19> The Digital Divide</a> 
+            </div>
+        </div>
     </section>
-
-
-    <section>
-
-        <h2>Map Information</h2>
-
-
-    </section>
-
     <footer>
+        <hr> 
         <p>Map authored by Nick Conley</p>
-
-
         <a href="https://newmapsplus.github.io">
             <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
                 alt="University of Kentucky Geography">
