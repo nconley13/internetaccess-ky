@@ -1,8 +1,7 @@
 {
     "title": "Internet Access in the Time of COVID",
-    "info": "Add info about project",
-    "coordinates": [38, -84.5],
-    "author": "Do you want to add your name?",
-    "link": "http://newmapsplus.uky.edu"
+    "info": "Map that shows the percent of households without internet or computer access by Kentucky school district",
+    "coordinates": [37.8393, -85.5037],
+    "author": "Nick Conley",
 
 }
