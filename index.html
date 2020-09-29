@@ -230,7 +230,7 @@
                     weight: 1,
                     fillColor: '#15397f',
                     fillOpacity: .6,
-                    radius: 6
+                    radius: Number(props["% No Computer or Internet Estimate"].slice(0, -1))/2 + 1
                 });
             },
             onEachFeature: function (feature, layer) {
