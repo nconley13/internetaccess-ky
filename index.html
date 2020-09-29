@@ -222,6 +222,9 @@
 
         var access = L.geoJson(internet, {
             pointToLayer: function (feature, latlng) {
+                var props = feature.properties
+                // create number from attribute
+                console.log(Number(props["% No Computer or Internet Estimate"].slice(0, -1)))
                 return L.circleMarker(latlng, {
                     color: 'black',
                     weight: 1,
