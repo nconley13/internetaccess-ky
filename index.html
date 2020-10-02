@@ -222,19 +222,24 @@
 
         var access = L.geoJson(internet, {
             pointToLayer: function (feature, latlng) {
+                var props = feature.properties
+                // create number from attribute
+                console.log(Number(props["% No Computer or Internet Estimate"].slice(0, -1)))
                 return L.circleMarker(latlng, {
                     color: 'black',
                     weight: 1,
-                    fillColor: '#15397f',
-                    fillOpacity: .6,
-                    radius: 6
+                    fillColor: 'darkred',
+                    fillOpacity: .4,
+                    radius: Number(props["% No Computer or Internet Estimate"].slice(0, -1))/2 + 1
                 });
             },
             onEachFeature: function (feature, layer) {
                 var props = feature.properties
                 console.log(props);
                 var popup = `<h4><b>${props["Geographic School District"]}</h4></b>
-							<b>% No Internet or Computer Access:</b> ${props["% No Computer or Internet Estimate"]}`
+                            <b>% No Internet or Computer Access:</b> ${props["% No Computer or Internet Estimate"]}<br>
+                            <b>% No Single Parent Estimate:</b> ${props["% Single Parent Estimate"]}<br>
+                            <b>% No Poverty (SAIPE Estimate):</b> ${props["% Poverty (SAIPE Estimate)"]}<br>`
                 layer.bindPopup(popup)
 
 
